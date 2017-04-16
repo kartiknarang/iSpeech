@@ -1,0 +1,14 @@
+{
+    "intents": [{
+        "intent": "SwearIntent"
+    }, {
+        "intent": "SpeechIntent"
+    }, {
+        "intent": "ThankIntent"
+    }, {
+        "intent": "UserIntent",
+        "slots" : [
+            {"name": "text", "type" : "AMAZON.LITERAL"}
+        ]
+    }]
+}

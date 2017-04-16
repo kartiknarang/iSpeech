@@ -1,0 +1,43 @@
+SwearIntent swear
+SwearIntent swearing
+SwearIntent cursing
+SwearIntent cussing
+SwearIntent curse
+SwearIntent cuss
+SwearIntent bad words
+
+SpeechIntent speech
+SpeechIntent speak
+SpeechIntent speaking
+SpeechIntent debating
+SpeechIntent debate
+SpeechIntent filler words
+
+ThankIntent thank you
+ThankIntent thanks
+
+UserIntent initiate {a|text} 
+UserIntent initiate {a b|text} 
+UserIntent initiate {a b c|text} 
+UserIntent initiate {a b c d|text} 
+UserIntent initiate {a b c d e|text} 
+UserIntent initiate {a b c d e f|text} 
+UserIntent initiate {a b c d e f g h|text} 
+UserIntent initiate {a b c d e f g h i|text} 
+UserIntent initiate {a b c d e f g h i j|text} 
+UserIntent initiate {a b c d e f g h i j k|text} 
+UserIntent initiate {a b c d e f g h i j k l|text} 
+UserIntent initiate {a b c d e f g h i j k l m|text} 
+UserIntent initiate {a b c d e f g h i j k l m n|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u v|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u v w|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u v w x|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u v w x y|text} 
+UserIntent initiate {a b c d e f g h i j k l m n o p q r s t u v w x y z|text} 
