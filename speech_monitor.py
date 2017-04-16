@@ -30,6 +30,20 @@ import time
 import unidecode
 import logging
 
+def basic_linear_regression(x, y):
+    # Basic computations to save a little time.
+    length = len(x)
+    sum_x = sum(x)
+    sum_y = sum(y)
+    
+    # Σx^2, and Σxy respectively.
+    sum_x_squared = sum(map(lambda a: a * a, x))
+    sum_of_products = sum([x[i] * y[i] for i in range(length)])
+    
+    # Magic formulae!
+    a = (sum_of_products - (sum_x * sum_y) / length) / (sum_x_squared - ((sum_x ** 2) / length))
+    b = (sum_y - a * sum_x) / length
+    return a, b
 
 app = Flask(__name__)
 ask = Ask(app, "/")
@@ -70,9 +84,6 @@ def swearF():
 @ask.intent("SpeechIntent")
 def speechF():
     global speechStr
-    f = open("deb.txt", "w")
-    f.write(speechStr)
-    f.close()
     stats = ""
     fCount = 0
     well = 0
@@ -113,7 +124,26 @@ def speechF():
     	if basically > 1:
     		stats += "s"
     	stats += "... "
-    return question("I will help you with your public speaking skills..." + stats)
+    with open("f.txt", "a") as myfile:
+        myfile.write(str(fCount) + "\n")
+    x = []
+    y = []
+    g = 0
+    with open("f.txt", "r") as myfile:
+        l = myfile.readlines()
+        for i in l:
+            biz = int(i)
+            x.append(g)
+            y.append(biz)
+            g += 1
+    a, b = basic_linear_regression(x, y)
+    xint = round(-b/a)
+    feedback = ""
+    if xint < 0:
+        feedback = "You have not been improving lately."
+    else:
+        feedback = "At this rate of improvement, you will stop using fillers by day " + str(xint)
+    return question("I will help you with your public speaking skills..." + stats + feedback)
 
 @ask.intent("UserIntent", convert={'text': str})
 def userF(text):
